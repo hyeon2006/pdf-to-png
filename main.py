@@ -31,10 +31,9 @@ def get_user_selection(items, item_type):
         selected_items = items
     else:
         try:
-            # 쉼표(,)가 있으면 공백으로 바꾸고 분리
             indices = selection.replace(",", " ").split()
             for i in indices:
-                idx = int(i) - 1  # 화면엔 1부터 보였으므로 0-based로 변환
+                idx = int(i) - 1
                 if 0 <= idx < len(items):
                     selected_items.append(items[idx])
         except ValueError:
